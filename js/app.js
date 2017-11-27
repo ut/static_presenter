@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-
   $("section#photos").randomize(".image");
 
   $('.image').hover( function(e) {
@@ -14,7 +13,7 @@ $(document).ready(function(){
   $('.image').on('click', function (e) {
     if ( $('body').hasClass("singleview") ) {
       var img_count = $(this).find('img').length;
-      console.log(img_count);
+      // refactor for >2 images
       if ( img_count > 1 )  {
         if ( $(this).find('img:nth-child(1)').is(':visible') ) {
           $(this).find('img:nth-child(1)').hide();
@@ -22,13 +21,11 @@ $(document).ready(function(){
         } else {
           $(this).find('img:nth-child(2)').hide();
           $(this).find('img:nth-child(1)').show();
-
         }
       } else {
         $('.image').removeClass("fullsize");
         $('body').removeClass("singleview");
         $('body').addClass("overview", 0, "easeInOutQuad" );
-
       }
     } else {
       $('.image').parent().removeClass("fullsize");
@@ -38,6 +35,7 @@ $(document).ready(function(){
     }
   });
   $('#overlay').on('click', function (e) {
+      $('.image.fullsize').addClass("presented");
       $('.image').removeClass("fullsize");
       $('body').removeClass("singleview");
       $('body').addClass("overview", 0, "easeInOutQuad" );

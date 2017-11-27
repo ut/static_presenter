@@ -56,14 +56,18 @@ body {
 body section#overlay {
   height: 0;
 }
-body.overview section#images div.image {
-    left: 15%;
-    margin: 0 auto;
-    position: static;
-    top: 15%;
-    width: auto;
-    z-index: 101;
+body.overview section#images .image {
+  left: 15%;
+  margin: 0 auto;
+  position: static;
+  top: 15%;
+  width: auto;
+  z-index: 101;
 }
+body.overview section#images .image.presented {
+  filter: grayscale(90%) brightness(50%);
+}
+
 
 /* special single fullsize view */
 body.singleview section#overlay {
@@ -84,19 +88,19 @@ body.singleview section#images div.image.fullsize img {
   transform: translate(-50%, -50%);
   height: 80%;
   width: 80%;
-    height:100% !important;
-    min-height: 80% !important;
-    width: auto !important;
-
-
-    border: 0px solid black;
-    padding: 20px;
-    background-color: rgba(255,255,255,0.95);
-    box-shadow: 0 0 10px #333;
-    opacity: 1;
-    z-index: 101;
-    transition: 0.5s all;
+  height:100% !important;
+  min-height: 80% !important;
+  width: auto !important;
+  border: 0px solid black;
+  padding: 20px;
+  background-color: rgba(255,255,255,0.95);
+  box-shadow: 0 0 10px #333;
+  opacity: 1;
+  z-index: 101;
+  transition: 0.5s all;
 }
+
+
 
 
 div.caption {
